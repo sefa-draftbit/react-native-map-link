@@ -1,12 +1,12 @@
 {
-  "name": "react-native-map-link",
-  "version": "3.1.0",
-  "description": "Open the map app of the user's choice with a specific location.",
+  "name": "@safaokumus/react-native-map-link",
+  "version": "3.1.1",
+  "description": "Open the map app of the user's choice with a specific location. Fork with Naver Maps navigation fix.",
   "source": "src/index",
   "main": "lib/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tschoffelen/react-native-map-link.git"
+    "url": "git+https://github.com/safaokumus/react-native-map-link.git"
   },
   "scripts": {
     "lint": "eslint src --max-warnings=0 && eslint tests --max-warnings=0",

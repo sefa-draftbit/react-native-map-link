@@ -497,12 +497,14 @@ export const generateMapUrl = ({
       break;
     case 'navermap':
       if (address) {
-        url = `${prefixes.navermap}search?query=${address}`;
+        url = `${prefixes.navermap}search?query=${address}&appname=${naverCallerName}`;
       } else {
         url = `${prefixes.navermap}map?lat=${lat}&lng=${lng}&appname=${naverCallerName}`;
 
         if (useSourceDestiny) {
-          url = `${prefixes.navermap}route?slat=${sourceLat}&slng=${sourceLng}&dlat=${lat}&dlng=${lng}&appname=${naverCallerName}`;
+          url = `${prefixes.navermap}route/car?slat=${sourceLat}&slng=${sourceLng}&dlat=${lat}&dlng=${lng}`;
+          url += title ? `&dname=${encodedTitle}` : '';
+          url += `&appname=${naverCallerName}`;
         }
       }
       break;
