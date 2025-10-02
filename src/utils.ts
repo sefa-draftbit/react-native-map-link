@@ -499,13 +499,15 @@ export const generateMapUrl = ({
       if (address) {
         url = `${prefixes.navermap}search?query=${address}&appname=${naverCallerName}`;
       } else {
-        url = `${prefixes.navermap}map?lat=${lat}&lng=${lng}&appname=${naverCallerName}`;
-
+        // Use route URL to properly set destination point
         if (useSourceDestiny) {
           url = `${prefixes.navermap}route/car?slat=${sourceLat}&slng=${sourceLng}&dlat=${lat}&dlng=${lng}`;
-          url += title ? `&dname=${encodedTitle}` : '';
-          url += `&appname=${naverCallerName}`;
+        } else {
+          // Set destination without source location
+          url = `${prefixes.navermap}route/car?dlat=${lat}&dlng=${lng}`;
         }
+        url += title ? `&dname=${encodedTitle}` : '';
+        url += `&appname=${naverCallerName}`;
       }
       break;
     case 'dgis':

@@ -1,6 +1,6 @@
 {
-  "name": "@safaokumus/react-native-map-link",
-  "version": "3.1.1",
+  "name": "react-native-map-link-naver",
+  "version": "3.1.2",
   "description": "Open the map app of the user's choice with a specific location. Fork with Naver Maps navigation fix.",
   "source": "src/index",
   "main": "lib/index.js",

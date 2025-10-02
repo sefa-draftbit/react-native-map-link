@@ -616,7 +616,20 @@ describe('showLocation', () => {
           app: 'navermap',
           naverCallerName: 'NaverName',
         },
-        'nmap://map?lat=123&lng=234&appname=NaverName',
+        'nmap://route/car?dlat=123&dlng=234&appname=NaverName',
+      );
+    });
+
+    it('opens with correct url if source is not provided and title is provided', () => {
+      verifyThatSettingsLeadToUrl(
+        {
+          latitude,
+          longitude,
+          title: 'My Destination',
+          app: 'navermap',
+          naverCallerName: 'NaverName',
+        },
+        'nmap://route/car?dlat=123&dlng=234&dname=My%20Destination&appname=NaverName',
       );
     });
 
@@ -630,7 +643,7 @@ describe('showLocation', () => {
           app: 'navermap',
           naverCallerName: 'NaverName',
         },
-        'nmap://route?slat=567&slng=890&dlat=123&dlng=234&appname=NaverName',
+        'nmap://route/car?slat=567&slng=890&dlat=123&dlng=234&appname=NaverName',
       );
     });
   });
